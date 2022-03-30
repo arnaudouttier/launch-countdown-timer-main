@@ -23,11 +23,11 @@ export default {
 </script>
 
 <style lang="scss">
-main {
+#main {
   font-family: $primary_font;
   height: 100vh;
   width: 100%;
-   background: linear-gradient(180deg, #1e1f29 80%, #2f2439 20%);
+  background: linear-gradient(180deg, #1e1f29 80%, #2f2439 20%);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 1fr;
@@ -38,16 +38,21 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-repeat: no-repeat;
 }
 
 .main-header {
   background-image: url("~@/assets/images/bg-stars.svg");
-  background-repeat: no-repeat;
 }
 
 .main-footer {
   background-image: url("~@/assets/images/pattern-hills.svg");
   background-position: 28% top;
-  background-repeat: no-repeat;
+}
+
+@media (min-width: 1200px) {
+  .main-footer {
+    background-size: cover;
+  }
 }
 </style>

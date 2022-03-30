@@ -1,5 +1,5 @@
 <template>
-  <section class="countdown-social">
+  <div class="countdown-social">
     <nav>
       <a href="#"
         ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -23,7 +23,7 @@
           /></svg
       ></a>
     </nav>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -34,8 +34,8 @@ export default {
 
 <style scoped lang="scss">
 .countdown-social {
-  width: min(30vw, 140px);
-  border: 2px solid red;
+  width: min(38vw, 150px);
+  padding-top: 64px;
 
   nav {
     display: flex;

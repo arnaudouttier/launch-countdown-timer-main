@@ -36,15 +36,22 @@ ul {
 
 .semi-circle-left,
 .semi-circle-right {
-  width: 20px;
-  height: 20px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
 }
 
 .semi-circle-left {
   background: linear-gradient(90deg, $very_dark_mblue 50%, rgba(255, 255, 255, 0) 50%);
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
 }
 
 .semi-circle-right {
   background: linear-gradient(270deg, $very_dark_mblue 50%, rgba(255, 255, 255, 0) 50%);
+  position: absolute;
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
 }

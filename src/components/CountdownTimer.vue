@@ -1,33 +1,41 @@
 <template>
-  <section class="countdown">
+  <div class="countdown">
     <h2 class="countdown-title">We're launching soon</h2>
     <ul class="countdown-list">
-      <li class="timer-item days">
+      <li class="timer-item">
         <div class="timer-number">
           <h3>{{ days }}</h3>
+          <div class="semi-circle-left"></div>
+          <div class="semi-circle-right"></div>
         </div>
         <p>days</p>
       </li>
-      <li class="timer-item hours">
+      <li class="timer-item">
         <div class="timer-number">
           <h3>{{ hours }}</h3>
+          <div class="semi-circle-left"></div>
+          <div class="semi-circle-right"></div>
         </div>
         <p>hours</p>
       </li>
-      <li class="timer-item minutes">
+      <li class="timer-item">
         <div class="timer-number">
           <h3>{{ minutes }}</h3>
+          <div class="semi-circle-left"></div>
+          <div class="semi-circle-right"></div>
         </div>
         <p>minutes</p>
       </li>
-      <li class="timer-item seconds">
+      <li class="timer-item">
         <div class="timer-number">
           <h3>{{ seconds }}</h3>
+          <div class="semi-circle-left"></div>
+          <div class="semi-circle-right"></div>
         </div>
         <p>seconds</p>
       </li>
     </ul>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -36,7 +44,7 @@ export default {
   data () {
     return {
       currentTime: 0,
-      endTime: 'April 18, 2022 14:22:00',
+      endTime: 'March 31, 2022 19:30:00',
       t: 0,
       days: 0,
       hours: 0,
@@ -74,26 +82,67 @@ export default {
 .countdown {
   width: min(90vw, 750px);
   margin: 0 auto;
-  border: 2px solid red;
   text-align: center;
 }
+
 .countdown-title {
-  margin-bottom: 50px;
+  margin-bottom: clamp(
+    50px,
+    calc(3.125rem + ((1vw - 3.75px) * 12.5945)),
+    100px
+  );
   color: $white;
-  font-size: 18px;
+  font-size: clamp(18px, calc(1.125rem + ((1vw - 3.75px) * 1.5113)), 24px);
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 7px;
 }
+
 .countdown-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
+
 .timer-item {
   text-align: center;
+
+  .timer-number {
+    width: clamp(70px, calc(4.375rem + ((1vw - 3.75px) * 17.6322)), 140px);
+    height: clamp(70px, calc(4.375rem + ((1vw - 3.75px) * 17.6322)), 140px);
+    margin-bottom: clamp(
+      15px,
+      calc(0.9375rem + ((1vw - 3.75px) * 2.5189)),
+      25px
+    );
+    background: linear-gradient(180deg, #2c2c44 50%, #34364f 49%);
+    -webkit-box-shadow: 0px 10px 7px -2px rgba(0, 0, 0, 0.84);
+    box-shadow: 0px 10px 7px -2px rgba(0, 0, 0, 0.84);
+    border-radius: 5px;
+    position: relative;
+
+    &::after {
+      content: " ";
+      width: 100%;
+      height: 2px;
+      background-color: rgba(0, 0, 0, 0.15);
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+
+    h3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      font-size: clamp(32px, calc(2rem + ((1vw - 3.75px) * 8.0605)), 64px);
+      font-weight: 600;
+    }
+  }
+
   p {
-    font-size: 8px;
-    letter-spacing: 2px;
+    font-size: clamp(7px, calc(0.4375rem + ((1vw - 3.75px) * 0.5038)), 13px);
+    letter-spacing: 3px;
     font-weight: 600;
     color: $grayish_blue;
     text-transform: uppercase;

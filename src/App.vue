@@ -4,20 +4,20 @@
       <CountdownTimer />
     </section>
     <section class="main-footer">
-      <CounterSocialNavigation />
+      <CountdownSocial />
     </section>
   </main>
 </template>
 
 <script>
 import CountdownTimer from './components/CountdownTimer.vue'
-import CounterSocialNavigation from './components/CounterSocialNavigation.vue'
+import CountdownSocial from './components/CountdownSocial.vue'
 
 export default {
   name: 'App',
   components: {
     CountdownTimer,
-    CounterSocialNavigation
+    CountdownSocial
   }
 }
 </script>

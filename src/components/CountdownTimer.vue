@@ -44,7 +44,7 @@ export default {
   data () {
     return {
       currentTime: 0,
-      endTime: 'March 31, 2022 19:30:00',
+      endTime: 'July 14, 2022 19:30:00',
       t: 0,
       days: 0,
       hours: 0,
